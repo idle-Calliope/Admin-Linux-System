@@ -1,0 +1,32 @@
+#!/bin/bash
+#1923636 - Ellaine Fontamillas
+
+while true
+do 
+clear
+echo -e "\t\t =========================================="
+echo -e "\t\t \t\tBAT MENU"
+echo -e "\t\t =========================================="
+echo -e "\n\t\t 1. Register New User \n"
+echo -e "\t\t 2. Search Staff Memeber \n"
+echo -e "\t\t 3. Adjust Employee Salary\n"
+echo -e "\t\t 4. Remove Resigning Employees\n"
+echo -e "\t\t 5. Capture Available Resources \n"
+echo -e "\t\t 6. Exit \n"
+echo -e "\t\t Please choose an option(1-6) \c"
+read option
+case "$option" in
+	1) ."./register.sh";;
+	2) ."./retrieve.sh";;
+	3) ."./update.sh";;
+	4) ."./remove.sh";;
+	5) ."./capture.sh";;
+	6) echo -e "\n \t\t Enter to continue \c"
+		read input
+		clear
+		exit;;
+	*) echo -e "\n \t\t WRONG INPUT!! TRY AGAIN";;
+esac
+echo -e "\n \t\t Enter to continue \c";;
+read input 
+done

@@ -1,0 +1,7 @@
+#removed data from CurrentEmployees comes here
+# e.g
+# Name			:Ellaine Fontamillas
+# Employee Number	:Ell-20210514-18:40:31
+# Department		:Computer Tech
+# Country of Origin	:Argentina
+# Salary		:5000

@@ -1,0 +1,51 @@
+#!/bin/bash
+
+while true
+do
+clear
+echo "=============================================================="
+echo "                      Register Window        "
+echo "=============================================================="
+echo -n "Enter your Username:			"
+read name
+echo -n "Enter your Department:			"
+read dep
+echo -n "Enter your Country of Origin:			"
+read cou
+echo -n "How much is you basic salary:			M"
+read sal
+
+firstThree=${name:0:3}
+da="(date + "%Y%m%d-%T")"
+
+echo ""
+echo "=============================================================="
+echo "                       Information		"
+echo "=============================================================="
+echo "Username:			$name"
+echo "Employee Number:			$firstThree-$da"
+echo "Department:			$dep"
+echo "Country of Origin:			$cou"
+echo "Basic Salary:			$sal"
+
+echo -e "\n"
+echo -n "   Please Confirm that you have entered the right details[Y/N] "
+read confirm
+case "$confirm" in 
+	Y) echo "Thank You For Registering With Us!!!"
+		echo "$name" >> CurrentEmployees.txt
+		echo "$firstThree-$da" >> CurrentEmployees.txt
+		echo "$dep" >> CurrentEmployees.txt
+		echo "$cou" >> CurrentEmployees.txt
+		echo "$sal" >> CurrentEmployees.txt
+		echo -e "You are now exiting the Register Window"
+		read c
+		."./dashboard.sh";;
+	N) echo -e "Enter to continue "
+		read input
+	*) echo "WRONG INPUT!!";;
+esac
+done
+		
+	
+		

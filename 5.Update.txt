@@ -1,0 +1,36 @@
+#!/bin/bash
+
+clear
+echo "=============================================="
+echo -e "\t\t Udpate Window"
+echo "=============================================="
+echo ""
+echo "1. Increase Basic Salary"
+echo "2. Calculate Basic Salary"
+echo ""
+echo ""
+echo -n "How would you like to update? "
+read reply
+echo ""
+case "$reply" in
+	1)
+		current="$(date +"%d-%m-%Y")"
+		if test "$current" = "01-04-2022"
+		then 
+			echo -n "Enter the amount you want to update: M"
+			read amount
+			echo ""
+			sum=`expr $amount + 1000`
+			echo "M$sum"
+			sed -i "/^"$amount"/"$amount"/"$sum"/" CurrentEmployees.txt
+			echo "You have updated the Salaries"
+		else	
+		 	echo "Please wait for 1st April"
+				
+		fi;;
+	
+	2)
+		. "./update2.sh";;
+	*)
+		echo "Something Went Wrong!!!";;
+esac

@@ -1,0 +1,42 @@
+#!/bin/bash
+
+while true:
+do 
+	clear
+	echo "================================================"
+	echo -e "\t        Capture Window"
+	echo "================================================"
+	echo -n "Enter Resource Name:   		"
+	read name
+	echo -n "Enter Resource Country:		"
+	read cou
+	echo -n "Enter Name of Managing Ministry:	"
+	read man
+	clear
+	echo "================================================"
+	echo -e "\t 	Information"
+	echo "================================================"
+	echo "Resource Name: 		$name"
+	echo "Resource Country: 	$cou"
+	echo "Name of Managing Ministry:$man"
+	echo -e "\n"
+	echo -n "Please confirm that you have entered the right details? [Y/N]"
+	read confirm
+	case "$confirm" in
+		Y)
+			echo "$name" >> Resources.txt
+			echo "$cou" >> Resources.txt
+			echo "$man" >> Resources.txt
+			echo -e "\n" >> Resources.txt
+			echo ""
+			echo "You have confirmed your information"
+			echo ""
+			echo "Exiting Now..."
+			exit;;
+		N)
+			. "./capture.sh";;
+		*)
+			echo "WRONG INPUT!!!";;
+	
+	esac
+done

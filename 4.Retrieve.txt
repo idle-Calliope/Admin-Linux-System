@@ -1,0 +1,66 @@
+#!/bin/bash
+
+clear
+echo "================================================="
+echo -e "\t\t SEARCH WINDOW"
+echo "================================================="
+echo "SEARCH FOR: "
+echo "[Name] [EmpNumber] [Department] [Country] [Salary]"
+echo ""
+echo -n "What are you looking for: "
+read search
+echo ""
+case "$search" in
+	Name)	
+		echo -n "Enter the Employee's Name: "
+		read name
+		clear
+		echo "======================================="
+		echo -e "\t SEARCH RESULTS:"
+		echo "======================================="
+		echo ""
+		grep -A 4 -B 1 "$name" "CurrentEmployees.txt";;
+	EmpNumber)
+		echo -n "Enter the Employment Number: "
+		read num
+		clear
+		echo "======================================="
+		echo -e "\t SEARCH RESULTS:"
+		echo "======================================="
+		echo ""
+		grep -A 3 -B 2 "$num" "CurrentEmployees.txt";;
+	Department)
+		echo -n "Enter the Employee's Department: "
+		read dep
+		clear
+		echo "======================================="
+		echo -e "\t SEARCH RESULTS:"
+		echo "======================================="
+		echo ""
+		grep -A 2 -B 3 "$dep" "CurrentEmployees.txt";;
+	Country)
+		echo -n "Enter the Employee's Country of Origin "
+		read cou
+		clear
+		echo "======================================="
+		echo -e "\t SEARCH RESULTS:"
+		echo "======================================="
+		echo ""
+		grep -A 1 -B 4 "$cou" "CurrentEmployees.txt";;
+	Salary)
+		echo -n "Enter the Salary Range: "
+		read sal
+		clear
+		echo "======================================="
+		echo -e "\t SEARCH RESULTS:"
+		echo "======================================="
+		echo ""
+		grep -B 5 "$sal" "CurrentEmployees.txt";;
+	     *)
+		clear
+		echo "======================================="
+		echo -e "\t SEARCH RESULTS:"
+		echo "======================================="
+		echo ""
+		echo "WRONG INPUT!!";;
+esac

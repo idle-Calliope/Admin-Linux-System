@@ -1,0 +1,28 @@
+#!/bin/bash
+
+clear
+echo "============================================"
+echo -e "\t Remove Employee Window"
+echo "============================================"
+echo ""
+echo "Enter the Name of resigning Employee:- "
+echo -n "Name: "
+read name
+echo ""
+echo "You are trying to delete a record"
+echo -n "Are you sure you want delete?[Y/N]"
+read confirm
+clear
+if test "$confirm" = "Y"
+then
+grep -v -A 4 -B 1 "$name" CurrentEmployees.txt >> FormerEmployees.txt
+awk 'NR==FNR{a[$0];next} !($0 in a)' CurrentEmployees.txt FormerEmployees.txt
+echo "____________________________________________"
+echo ""
+echo "You have updated the Current Employees List"
+fi
+
+if test "$confirm" = "N"
+then 
+	. "./remove.sh"
+fi

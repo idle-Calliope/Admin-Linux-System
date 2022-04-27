@@ -1,0 +1,61 @@
+#!/bin/bash
+
+clear
+
+current="$(date +"%d-%m-%Y")"
+
+if test "$current" = "31-03-2022"
+then
+	echo "_________________________________________________"
+	echo ""
+	echo -n "Enter the amount you want to update: M"
+	read amount
+	echo ""
+
+	if [ $amount -lt 7000 ]
+	then
+		val=100
+		per=`awk "BEGIN {print $amount/$val}"`
+		per2=`awk "BEGIN {print $per*$val}"`
+		bonus=`expr $amount + $per2`
+		echo "Bonus Percentage: $val%"
+		echo "Bonus Salary:     M$bonus"
+		echo "_______________________________________________________"
+		sed -i "/^"$amount"/"$amount"/"$bonus"/" CurrentEmployees.txt
+		echo "You have updated the Employees Salary"
+	fi
+		
+	if [ $amount -ge 7000 ]
+	then
+		if [ $amount -lt 10000 ]
+		then
+			val2=75
+			per=`awk "BEGIN {print $val2/100}"`
+			per2=`awk "BEGIN {print $per*$amount}"`
+			bonus=`awk "BEGIN {print $amount + $per2}`
+			echo "Bonus Percentage: $val2%"
+			echo "Bonus Salary:     M$bonus"
+			echo "_______________________________________________________"
+			sed -i "/^"$amount"/"$amount"/"$bonus"/" CurrentEmployees.txt
+			echo "You have updated the Employees Salary"
+		fi
+	
+	fi	
+	
+	if [ $amount -ge 10000 ]
+	then
+		val3=50
+		per=`awk "BEGIN {print $val3/100}"`
+		per2=`awk "BEGIN {print $per*$amount}"`
+		bonus=`awk "BEGIN {print $amount + $per2}`
+		echo "Bonus Percentage: $val3%"
+		echo "Bonus Salary:     M$bonus"
+		echo "_______________________________________________________"
+		sed -i "/^"$amount"/"$amount"/"$bonus"/" CurrentEmployees.txt
+		echo "You have updated the Employees Salary"
+	fi	
+else 
+	echo "Please Wait for the Appropriate date to make changes"
+fi
+		
+		

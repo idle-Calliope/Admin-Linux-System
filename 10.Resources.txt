@@ -1,0 +1,5 @@
+#captured resources information comes here
+# e.g
+# Resource Name				:Mohair
+# Country of Origin			:Lesotho
+# Name of Managing Ministry		:Sebabatso Lesola
