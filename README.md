@@ -1,6 +1,14 @@
-This an admin system written in shell script using Linux text editor. The system allows for admins in an imaginary company to view their hired employees, register new ones, calculate salary bonuses, and remove staff info from the database, but stored in a former employee file.
+# Admin-Linux-System
+University End Year Project on Linux Using Shell Script
 
-The report '1923636_Ellaine_Fontamillas_FINAL_ICA_4' included explains more
+This project creates a sytem specifically for administrators of a company to manage their employees and their salaries. 
 
-# Admin-system-in-Linux-using-shell-script
-End year project for implementing an administrative system using shell script 
+Tasks
+---
+This system is written in **shell script** using Linux text editor. The system allows for admins of a company to **view** their hired employees, **register** new ones, **calculate** salary bonuses, and **remove** staff information from the database.
+
+Additional Tasks
+---
+Former employees information are kept in a seperate file "former employee"
+
+
