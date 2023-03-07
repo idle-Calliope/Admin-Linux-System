@@ -3,6 +3,8 @@ University End Year Project on Linux Using Shell Script
 
 This project creates a sytem specifically for administrators of a company to manage their employees and their salaries. 
 
+**NB: Process of creating this application including the tools used are found in the report word document**
+
 Tasks
 ---
 This system is written in **shell script** using Linux text editor. The system allows for admins of a company to **view** their hired employees, **register** new ones, **calculate** salary bonuses, and **remove** staff information from the database.
